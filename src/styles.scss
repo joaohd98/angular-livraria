@@ -1,1 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+@import "app/theme/variables";
+
+.container {
+
+  margin-top: 30px;
+
+  @include screenType(desktop) {
+
+    margin-top: 5vh;
+
+
+  }
+
+
+}
