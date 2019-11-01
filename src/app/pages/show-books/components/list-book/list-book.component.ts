@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {MasterComponent} from '../../../../helpers/master/master-component';
-import {faEdit, faTrash, IconDefinition} from '@fortawesome/free-solid-svg-icons';
+import {faEdit, faPlus, faPlusSquare, faTrash, IconDefinition} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-show-books-list-book',
@@ -10,6 +10,7 @@ import {faEdit, faTrash, IconDefinition} from '@fortawesome/free-solid-svg-icons
 export class ListBookComponent extends MasterComponent implements OnInit {
 
   list: {name: string, isCollapsed: boolean}[];
+  iconAdd: IconDefinition;
   iconEdit: IconDefinition;
   iconDelete: IconDefinition;
 
@@ -22,6 +23,7 @@ export class ListBookComponent extends MasterComponent implements OnInit {
       {name: 'ccc', isCollapsed: true },
     ];
 
+    this.iconAdd = faPlusSquare;
     this.iconDelete = faTrash;
     this.iconEdit = faEdit;
 
