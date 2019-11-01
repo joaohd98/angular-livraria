@@ -6,13 +6,13 @@
         {{ item.name }}
       </span>
       <span>
-        <div ngbDropdown class="d-inline-block">
-          <button class="btn btn-outline-primary" ngbDropdownToggle>Opções</button>
+        <div ngbDropdown>
+          <button class="btn btn-outline-dark" ngbDropdownToggle>Opções</button>
           <div ngbDropdownMenu>
-            <button ngbDropdownItem>
+            <button ngbDropdownItem class="btn-outline-success">
               <app-icon [iconName]="iconEdit"></app-icon>Editar
             </button>
-            <button ngbDropdownItem>
+            <button ngbDropdownItem class="btn-outline-danger">
               <app-icon [iconName]="iconDelete"></app-icon>Deletar
             </button>
           </div>

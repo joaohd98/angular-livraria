@@ -14,6 +14,9 @@
 
     .row span {
 
+      font-size: 1.1rem;
+      line-height: 1.5;
+      color: var(--color-gray);
       margin-left: 5px;
 
     }
@@ -23,9 +26,6 @@
       span:first-child {
 
         flex: 0.98;
-        font-size: 1.1rem;
-        line-height: 1.5;
-        color: var(--color-gray);
         margin-top: 7.5px;
 
         app-icon {
@@ -38,6 +38,30 @@
 
       }
 
+      .btn-outline-success:focus, .btn-outline-danger:focus {
+        box-shadow: none;
+        outline:0;
+      }
+
+
+      .btn-outline-success:active, .btn-outline-danger:active {
+        color: var(--color-white);
+      }
+
+      .btn-outline-success {
+
+        color: var(--color-green)
+
+
+      }
+
+      .btn-outline-danger {
+
+        color: var(--color-danger)
+
+      }
+
+
     }
 
     .row:nth-child(2) {
@@ -45,6 +69,7 @@
       margin-top: 15px;
       border-top: 1px solid rgba(0,0,0,.125);
       padding-top: 10px;
+      color: var(--color-green);
 
     }
 
