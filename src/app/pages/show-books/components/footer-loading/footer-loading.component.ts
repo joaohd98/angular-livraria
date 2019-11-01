@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-show-books-footer-loading',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer-loading.component.scss']
 })
 export class FooterLoadingComponent implements OnInit {
+
+  @Input() isLoading: boolean;
 
   constructor() { }
 

@@ -1,1 +1,4 @@
-<p>footer-loading works!</p>
+<div class="text-center">
+  <app-spinner *ngIf="isLoading"></app-spinner>
+  <button *ngIf="!isLoading" class="btn btn-outline-success">Carregar mais livros</button>
+</div>

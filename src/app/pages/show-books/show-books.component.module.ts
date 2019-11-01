@@ -6,6 +6,7 @@ import {ListBookComponent} from './components/list-book/list-book.component';
 import {FooterLoadingComponent} from './components/footer-loading/footer-loading.component';
 import {NgbCollapseModule, NgbDropdownModule} from '@ng-bootstrap/ng-bootstrap';
 import {IconComponentModule} from '../../components/icon/icon.component.module';
+import {SpinnerComponentModule} from '../../components/spinner/spinner.component.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {IconComponentModule} from '../../components/icon/icon.component.module';
     BrowserModule,
     NgbDropdownModule,
     NgbCollapseModule,
-    IconComponentModule
+    IconComponentModule,
+    SpinnerComponentModule
   ],
 })
 export class ShowBooksComponentModule { }
