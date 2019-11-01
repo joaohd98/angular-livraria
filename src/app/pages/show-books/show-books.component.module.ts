@@ -7,6 +7,7 @@ import {FooterLoadingComponent} from './components/footer-loading/footer-loading
 import {NgbCollapseModule, NgbDropdownModule} from '@ng-bootstrap/ng-bootstrap';
 import {IconComponentModule} from '../../components/icon/icon.component.module';
 import {SpinnerComponentModule} from '../../components/spinner/spinner.component.module';
+import {FormatMoneyPipeModule} from '../../pipes/format-money/format-money.pipe.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {SpinnerComponentModule} from '../../components/spinner/spinner.component
     NgbDropdownModule,
     NgbCollapseModule,
     IconComponentModule,
-    SpinnerComponentModule
+    SpinnerComponentModule,
+    FormatMoneyPipeModule
   ],
 })
 export class ShowBooksComponentModule { }

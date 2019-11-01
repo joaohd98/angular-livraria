@@ -22,13 +22,13 @@
     <div class="row" [ngbCollapse]="book.isCollapsed">
       <div>
         <div class="line">
-          <strong>Nome do livro: </strong> teste
+          <strong>Nome do livro: </strong> {{ book.name }}
         </div>
         <div class="line">
-          <strong>Nome do autor: </strong> teste
+          <strong>Nome do autor: </strong> {{ book.author }}
         </div>
         <div class="line">
-          <strong>Preço: </strong> R$ 123,00
+          <strong>Preço: </strong> {{ book.price | formatMoney }}
         </div>
       </div>
     </div>
