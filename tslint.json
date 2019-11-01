@@ -44,6 +44,7 @@
         ]
       }
     ],
+    "curly": false,
     "no-consecutive-blank-lines": false,
     "no-console": [
       true,
@@ -58,6 +59,11 @@
       true,
       "ignore-params"
     ],
+    "variable-name": {
+      "options": [
+        "allow-leading-underscore"
+      ]
+    },
     "no-non-null-assertion": true,
     "no-redundant-jsdoc": true,
     "no-switch-case-fall-through": true,

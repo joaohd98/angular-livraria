@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {MasterComponent} from '../../../../helpers/master/master-component';
+import {BookResponseModel} from '../../../../models/book/book-response-model';
+import {ServiceStatus} from '../../../../services';
 import {faEdit, faMinusSquare, faPlusSquare, faTrash, IconDefinition} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -7,22 +9,17 @@ import {faEdit, faMinusSquare, faPlusSquare, faTrash, IconDefinition} from '@for
   templateUrl: './list-book.component.html',
   styleUrls: ['./list-book.component.scss']
 })
-export class ListBookComponent extends MasterComponent implements OnInit {
+export class ListBookComponent implements OnInit {
 
-  list: {name: string, isCollapsed: boolean}[];
+  @Input() books: BookResponseModel[];
+  @Input() status: ServiceStatus;
+
   iconPlus: IconDefinition;
   iconMinus: IconDefinition;
   iconEdit: IconDefinition;
   iconDelete: IconDefinition;
 
-  constructor() {
-    super();
-
-    this.list = [
-      {name: 'Meu nome do livtosadasdas', isCollapsed: true },
-      {name: 'bbb', isCollapsed: true },
-      {name: 'ccc', isCollapsed: true },
-    ];
+  ngOnInit() {
 
     this.iconPlus = faPlusSquare;
     this.iconMinus = faMinusSquare;
@@ -31,8 +28,9 @@ export class ListBookComponent extends MasterComponent implements OnInit {
 
   }
 
+  getBookItem(book: BookResponseModel) {
 
-  ngOnInit() {
+
   }
 
 }
