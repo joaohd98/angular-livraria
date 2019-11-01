@@ -1,11 +1,18 @@
-<ul class="list-group">
-  <li *ngFor="let book of books;" class="list-group-item clearfix" >
-    <div class="row">
+<div class="list-empty">
+  <h1>Sem Livros</h1>
+  <p>Nenhum livro foi encontrado</p>
+  <button class="btn btn-success">Adicionar Livro</button>
+</div>
+
+<div *ngIf="true == false">
+  <ul class="list-group">
+    <li *ngFor="let book of books;" class="list-group-item clearfix" >
+      <div class="row">
       <span>
         <app-icon [iconName]="book.isCollapsed ? iconPlus : iconMinus" (click)="book.isCollapsed = !book.isCollapsed"></app-icon>
         {{ book.name }}
       </span>
-      <span>
+        <span>
         <div ngbDropdown>
           <button class="btn btn-outline-dark" ngbDropdownToggle>Opções</button>
           <div ngbDropdownMenu>
@@ -18,19 +25,20 @@
           </div>
         </div>
       </span>
-    </div>
-    <div class="row" [ngbCollapse]="book.isCollapsed">
-      <div>
-        <div class="line">
-          <strong>Nome do livro: </strong> {{ book.name }}
-        </div>
-        <div class="line">
-          <strong>Nome do autor: </strong> {{ book.author }}
-        </div>
-        <div class="line">
-          <strong>Preço: </strong> {{ book.price | formatMoney }}
+      </div>
+      <div class="row" [ngbCollapse]="book.isCollapsed">
+        <div>
+          <div class="line">
+            <strong>Nome do livro: </strong> {{ book.name }}
+          </div>
+          <div class="line">
+            <strong>Nome do autor: </strong> {{ book.author }}
+          </div>
+          <div class="line">
+            <strong>Preço: </strong> {{ book.price | formatMoney }}
+          </div>
         </div>
       </div>
-    </div>
-  </li>
-</ul>
+    </li>
+  </ul>
+</div>
