@@ -1,0 +1,47 @@
+.list-group {
+
+  margin-top: 15px;
+  margin-bottom: 15px;
+
+  .list-group-item:not(:first-child) {
+
+    margin-top: 15px;
+
+
+  }
+
+  .list-group-item {
+
+    .row:first-child {
+
+      span:first-child {
+
+        flex: 0.98;
+        margin-top: 5px;
+        margin-left: 5px;
+
+      }
+
+    }
+
+  }
+
+  .dropdown-menu {
+
+    min-width: auto;
+
+    .dropdown-item {
+
+      padding: 5px 10px;
+
+    }
+
+    app-icon {
+
+      padding-right: 5px;
+
+    }
+
+  }
+
+}

@@ -1,1 +1,22 @@
-<p>list-book works!</p>
+<ul class="list-group">
+  <li *ngFor="let item of list; let id = index" class="list-group-item clearfix" >
+    <div class="row">
+      <span>
+        {{ item.name }}
+      </span>
+      <span>
+        <div ngbDropdown class="d-inline-block">
+          <button class="btn btn-outline-primary" ngbDropdownToggle>Opções</button>
+          <div ngbDropdownMenu>
+            <button ngbDropdownItem>
+              <app-icon [iconName]="iconEdit"></app-icon>Editar
+            </button>
+            <button ngbDropdownItem>
+              <app-icon [iconName]="iconDelete"></app-icon>Deletar
+            </button>
+          </div>
+        </div>
+      </span>
+    </div>
+  </li>
+</ul>
