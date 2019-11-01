@@ -2,7 +2,7 @@
   <li *ngFor="let item of list;" class="list-group-item clearfix" >
     <div class="row">
       <span>
-        <app-icon [iconName]="iconAdd" (click)="item.isCollapsed = !item.isCollapsed"></app-icon>
+        <app-icon [iconName]="item.isCollapsed ? iconPlus : iconMinus" (click)="item.isCollapsed = !item.isCollapsed"></app-icon>
         {{ item.name }}
       </span>
       <span>
@@ -20,7 +20,7 @@
       </span>
     </div>
     <div class="row" [ngbCollapse]="item.isCollapsed">
-      You can collapse this card by clicking Toggle
+      <span>You can collapse this card by clicking Toggle</span>
     </div>
   </li>
 </ul>
