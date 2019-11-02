@@ -15,6 +15,8 @@ export const showBooksComponentConst = {
     issueTitle: 'Aviso',
     issueMessage: 'Ocorreu um erro ao buscar os livros.',
     issueButton: 'Tentar Novamente',
+    filterTitle: 'Aviso',
+    filterMessage: 'Nenhum livro encontrado com o texto pesquisado.',
     successEdit: 'Editar',
     successDelete: 'Deletar',
     successName: 'Nome do livro: ',

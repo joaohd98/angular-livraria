@@ -44,7 +44,6 @@ export class ShowBooksComponentInteractor {
 
   getMoreBooks() {
 
-    this.component.status = ServiceStatus.isLoading;
     this.component.page++;
     this.component.hasNextButton = false;
 

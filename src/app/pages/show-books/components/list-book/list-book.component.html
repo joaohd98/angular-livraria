@@ -1,22 +1,26 @@
-<div class="list-empty" *ngIf="true == false">
+<div *ngIf="isEmpty()" class="list-empty">
   <h1>{{ constants.emptyTitle }}</h1>
-  <p>{{ constants.emptyMessage }}.</p>
+  <p>{{ constants.emptyMessage }}</p>
   <button class="btn btn-success">{{ constants.emptyButton }}</button>
 </div>
 
-<div class="list-issue" *ngIf="true == false">
-  <h1>{{ constants.issueTitle}}</h1>
-  <p>{{ constants.issueMessage}}</p>
-  <button class="btn btn-success">{{ constants.emptyButton}}</button>
+<div *ngIf="isFilter()" class="list-filter">
+  <h1>{{ constants.filterTitle}}</h1>
+  <p>{{ constants.filterMessage}}</p>
 </div>
 
-<div class="list-loading" *ngIf="true == false">
+<div *ngIf="isIssue()" class="list-filter">
+  <h1>{{ constants.issueTitle}}</h1>
+  <p>{{ constants.issueMessage}}</p>
+</div>
+
+<div *ngIf="isLoading()" class="list-loading">
   <ul class="list-group">
-    <li *ngFor="let _ of [1, 2, 3, 4, 5];" class="list-group-item clearfix" ></li>
+    <li *ngFor="let _ of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];" class="list-group-item clearfix" ></li>
   </ul>
 </div>
 
-<div class="list-success">
+<div *ngIf="isSuccess()" class="list-success">
   <ul class="list-group">
     <li *ngFor="let book of books;" class="list-group-item clearfix" >
       <div class="row">
