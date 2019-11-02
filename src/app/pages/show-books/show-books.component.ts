@@ -4,6 +4,7 @@ import {MasterPage} from '../../helpers/master/master-page';
 import {ServiceStatus} from '../../services';
 import {BookResponseModel} from '../../models/book/book-response-model';
 import {showBooksComponentConst} from './providers/show-books.component.constants';
+import {ShowBooksComponentInteractor} from './providers/show-books.component.interactor';
 
 @Component({
   selector: 'app-show-books',
@@ -23,11 +24,7 @@ export class ShowBooksComponent extends MasterPage implements OnInit {
   constructor(public listBookService: ListBooksService) {
     super();
 
-    this.searchText = '';
-    this.page = 1;
-    this.hasNext = false;
-    this.hasNextButton = false;
-    this.books = [];
+    ShowBooksComponentInteractor.setDefaultPageValue(this);
 
   }
 
@@ -50,6 +47,13 @@ export class ShowBooksComponent extends MasterPage implements OnInit {
 
   }
 
+  searchInput() {
 
+  }
+
+  getMoreBooks() {
+
+
+  }
 
 }
