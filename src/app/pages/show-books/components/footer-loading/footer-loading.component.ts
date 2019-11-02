@@ -22,10 +22,9 @@ export class FooterLoadingComponent extends MasterComponent implements OnChanges
 
   ngOnChanges(changes: SimpleChanges): void {
 
-    if (changes.books) {
-      console.log(changes.books);
+    if (changes.books)
       this.hasReachBottom = false;
-    }
+
   }
 
   @HostListener('window:scroll', [])
