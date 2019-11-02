@@ -36,7 +36,7 @@ export const formBookComponentConstants = {
     requiredType: 'required',
     requiredMessage: 'Campo preço do livro é obrigatório',
     patternType: 'pattern',
-    patternMessage: 'Campo preço do livro só pode ter números',
+    patternMessage: 'Campo preço do livro inválido',
   },
 
 };
