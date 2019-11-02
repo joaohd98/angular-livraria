@@ -1,10 +1,14 @@
 <div class="row-title">
   Adicionar
 </div>
-<div>
+<form>
+  <div class="row-inputs">
+    <app-input-name [formGroup]="formGroup" [formGroupMessage]="formGroupMessage"></app-input-name>
+    <app-input-author [formGroup]="formGroup" [formGroupMessage]="formGroupMessage"></app-input-author>
+    <app-input-price [formGroup]="formGroup" [formGroupMessage]="formGroupMessage"></app-input-price>
+  </div>
+  <div class="row-button">
+    <button class="btn btn-success" [disabled]="!formGroup.valid">Adicionar Livro</button>
+  </div>
+</form>
 
-</div>
-
-<div class="row-button">
-  <button class="btn btn-success">Adicionar Livro</button>
-</div>

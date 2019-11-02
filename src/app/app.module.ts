@@ -7,13 +7,10 @@ import {AppRoutingModule} from './routes/app.routing.module';
 import {ShowBooksComponentModule} from './pages/show-books/show-books.component.module';
 import {HttpClientModule} from '@angular/common/http';
 import {FormBookComponentModule} from './pages/form-book/form-book.component.module';
-import { InputComponent } from './components/input/input.component';
-import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
-    InputComponent,
   ],
   imports: [
     BrowserModule,
@@ -23,7 +20,6 @@ import {ReactiveFormsModule} from '@angular/forms';
     /* PAGES */
     ShowBooksComponentModule,
     FormBookComponentModule,
-    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

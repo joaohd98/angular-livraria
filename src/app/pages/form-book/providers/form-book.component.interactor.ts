@@ -1,6 +1,7 @@
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {FormBookComponent} from '../form-book.component';
 import {FormGroupMessage} from '../../../validators/form-group-message';
+import {formBookComponentConstants} from './form-book.component.constants';
 
 export class FormBookComponentInteractor {
 
@@ -23,6 +24,7 @@ export class FormBookComponentInteractor {
       ])),
       price: new FormControl('', Validators.compose([
         Validators.required,
+        Validators.pattern('^[0-9]{1,2}([,.][0-9]{1,2})?$')
       ])),
     });
 
@@ -30,23 +32,26 @@ export class FormBookComponentInteractor {
 
   getFormMessageGroup(): FormGroupMessage[] {
 
+    const {inputName, inputAuthor, inputPrice} = formBookComponentConstants;
+
     return [
       {
-        name: 'name',
+        name: inputName.name,
         content: [
-          { type: 'required', message: 'CPF é obrigatório' },
+          { type: inputName.requiredType, message: inputName.requiredMessage },
         ]
       },
       {
-        name: 'author',
+        name: inputAuthor.name,
         content: [
-          { type: 'required', message: 'Data de nascimento é obrigatória.' },
+          { type: inputAuthor.requiredType, message: inputAuthor.requiredMessage },
         ]
       },
       {
-        name: 'price',
+        name: inputPrice.name,
         content: [
-          { type: 'required', message: 'Data de nascimento é obrigatória.' },
+          { type: inputPrice.requiredType, message: inputPrice.requiredMessage },
+          { type: inputPrice.patternType, message: inputPrice.patternMessage },
         ]
       },
     ];

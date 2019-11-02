@@ -1,16 +1,14 @@
 <div class="input-content" [formGroup]="formGroup">
-  <ion-label position="stacked">
+  <label>
     {{ label }}
-  </ion-label>
-  <ion-input
-    [formControlName]="name" clearInput="true" [type]="type"
-    [placeholder]="placeholder" (ionFocus)="focus(true)" (ionBlur)="focus(false)">
-  </ion-input>
+  </label>
+  <input class="form-control" [formControlName]="name" [type]="type"
+    [placeholder]="placeholder" (ionFocus)="focus(true)" (ionBlur)="focus(false)" />
   <div class="message-container">
     <ng-container *ngFor="let validation of formMessage.content">
-      <span class="messages {{abstractControl['focus'] ? 'validation-warning' : 'validation-errors'}}" *ngIf="abstractControl.hasError(validation.type) && (abstractControl.touched || abstractControl.value)" >
+      <div class="messages {{abstractControl['focus'] ? 'validation-warning' : 'validation-errors'}}" *ngIf="abstractControl.hasError(validation.type) && (abstractControl.touched || abstractControl.value)" >
         {{ validation.message }}
-      </span>
+      </div>
     </ng-container>
   </div>
 </div>
