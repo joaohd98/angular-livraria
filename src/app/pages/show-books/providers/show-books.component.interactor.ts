@@ -47,6 +47,29 @@ export class ShowBooksComponentInteractor {
 
   }
 
+  getMoreBooks() {
+
+    this.component.status = ServiceStatus.isLoading;
+    this.component.page++;
+
+    const { searchText, page, constants } = this.component;
+
+    this.component.listBookService.callRequest(searchText, page, constants.limit).then(response => {
+
+      this.component.status = ServiceStatus.success;
+
+      this.component.books = this.component.books.concat(response.data.books);
+      this.component.hasNext = response.data.total > page * constants.limit;
+
+    }, () => {
+
+      this.component.status = ServiceStatus.hasIssue;
+
+    });
+
+
+  }
+
   filterBooks(searchText: string) {
 
     this.component.searchText = searchText;

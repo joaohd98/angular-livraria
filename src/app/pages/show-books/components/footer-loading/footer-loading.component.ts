@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {MasterComponent} from '../../../../helpers/master/master-component';
 import {showBooksComponentConst} from '../../providers/show-books.component.constants';
+import {ShowBooksComponentInteractor} from '../../providers/show-books.component.interactor';
 
 @Component({
   selector: 'app-show-books-footer-loading',
@@ -9,6 +10,7 @@ import {showBooksComponentConst} from '../../providers/show-books.component.cons
 })
 export class FooterLoadingComponent extends MasterComponent implements OnInit {
 
+  @Input() interactor: ShowBooksComponentInteractor;
   @Input() hasNext: boolean;
   @Input() hasNextButton: boolean;
   hasReachBottom: boolean;
@@ -17,7 +19,11 @@ export class FooterLoadingComponent extends MasterComponent implements OnInit {
 
   ngOnInit() {
 
+  }
 
+  getMoreBooks() {
+
+    this.interactor.getMoreBooks();
 
   }
 
