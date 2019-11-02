@@ -2,6 +2,9 @@ import {faEdit, faMinusSquare, faPlusSquare, faTrash} from '@fortawesome/free-so
 
 export const showBooksComponentConst = {
 
+  page: {
+    limit: 10,
+  },
   searchBar: {
     placeholder: 'Digite o nome ou autor do livro...',
   },

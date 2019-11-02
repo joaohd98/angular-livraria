@@ -1,3 +1,5 @@
+import {environment} from '../../environments/environment';
+
 export enum ServiceStatus {
 
   noAction,
@@ -25,4 +27,35 @@ export const serviceConst = {
   }
 
 };
+
+export class Service {
+
+  static setURl = (path: string): string => environment.url + path;
+
+  static setGetParamater(url: string, parameters: {name: string, value: string | number}[] ): string {
+
+    let firstTry = true;
+
+    parameters.forEach(paramater => {
+
+      if (firstTry) {
+
+        url += '?';
+
+        firstTry = false;
+
+      }
+
+      else
+        url += '&';
+
+      url += paramater.name + '=' + paramater.value;
+
+    });
+
+    return url;
+
+  }
+
+}
 

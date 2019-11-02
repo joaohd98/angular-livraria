@@ -14,7 +14,6 @@ export class ListBookComponent extends MasterComponent implements OnInit {
 
   @Input() books: BookResponseModel[];
 
-
   ngOnInit() {
 
 

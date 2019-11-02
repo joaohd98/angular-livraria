@@ -6,7 +6,7 @@ import {Input} from '@angular/core';
 export class MasterComponent {
 
   @Input() status: ServiceStatus = ServiceStatus.noAction;
-  helpers: Helpers;
+  helpers = Helpers;
   constants: MasterConstants;
 
 }

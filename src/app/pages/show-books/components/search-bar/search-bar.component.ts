@@ -12,12 +12,6 @@ export class SearchBarComponent extends MasterComponent {
 
   constants = showBooksComponentConst.searchBar;
 
-  @Input() status: ServiceStatus;
-
-  constructor() {
-    super();
-  }
-
   showSearchBar(): boolean {
 
     return this.status === ServiceStatus.success;

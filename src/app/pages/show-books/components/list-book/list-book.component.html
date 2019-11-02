@@ -22,7 +22,7 @@
       <div class="row">
       <span>
         <app-icon [iconName]="book.isCollapsed ? constants.iconPlus : constants.iconMinus" (click)="book.isCollapsed = !book.isCollapsed"></app-icon>
-        {{ book.name }}
+        {{ book.id }} {{ book.name }}
       </span>
         <span>
         <div ngbDropdown>

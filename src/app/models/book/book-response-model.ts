@@ -1,5 +1,6 @@
 export class BookResponseModel {
 
+  headers: any;
   private _id: string;
   private _name: string;
   private _author: string;
