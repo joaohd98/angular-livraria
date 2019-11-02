@@ -1,4 +1,4 @@
-.list-empty {
+.list-empty, .list-issue {
 
   color: var(--color-gray);
   text-align: center;
@@ -26,7 +26,7 @@
 }
 
 
-.list-success {
+.list-success, .list-loading {
 
   .list-group {
 

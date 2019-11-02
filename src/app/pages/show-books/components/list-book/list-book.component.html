@@ -1,10 +1,22 @@
-<div class="list-empty">
+<div class="list-empty" *ngIf="true == false">
   <h1>Sem Livros</h1>
-  <p>Nenhum livro foi encontrado</p>
+  <p>Nenhum livro foi encontrado.</p>
   <button class="btn btn-success">Adicionar Livro</button>
 </div>
 
-<div *ngIf="true == false">
+<div class="list-issue" *ngIf="true == false">
+  <h1>Aviso</h1>
+  <p>Ocorreu um erro ao buscar os livros.</p>
+  <button class="btn btn-success">Tentar Novamente</button>
+</div>
+
+<div class="list-loading">
+  <ul class="list-group">
+    <li *ngFor="let _ of [1, 2, 3, 4, 5];" class="list-group-item clearfix" ></li>
+  </ul>
+</div>
+
+<div class="list-success" *ngIf="true == false">
   <ul class="list-group">
     <li *ngFor="let book of books;" class="list-group-item clearfix" >
       <div class="row">

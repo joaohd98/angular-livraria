@@ -7,7 +7,7 @@ import {faEdit, faMinusSquare, faPlusSquare, faTrash, IconDefinition} from '@for
 @Component({
   selector: 'app-show-books-list-book',
   templateUrl: './list-book.component.html',
-  styleUrls: ['./list-book.component.scss']
+  styleUrls: ['./list-book.component.scss', './list-book.component.skeleton.scss']
 })
 export class ListBookComponent implements OnInit {
 
