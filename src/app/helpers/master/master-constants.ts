@@ -1,4 +1,5 @@
+import {IconDefinition} from '@fortawesome/free-solid-svg-icons';
+
 export interface MasterConstants {
-  name: string;
-  value: string;
+  [key: string]: string | IconDefinition;
 }

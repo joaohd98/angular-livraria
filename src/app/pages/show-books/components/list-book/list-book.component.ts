@@ -1,30 +1,22 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {MasterComponent} from '../../../../helpers/master/master-component';
 import {BookResponseModel} from '../../../../models/book/book-response-model';
-import {ServiceStatus} from '../../../../services';
-import {faEdit, faMinusSquare, faPlusSquare, faTrash, IconDefinition} from '@fortawesome/free-solid-svg-icons';
+import {showBooksComponentConst} from '../../providers/show-books.component.constants';
 
 @Component({
   selector: 'app-show-books-list-book',
   templateUrl: './list-book.component.html',
   styleUrls: ['./list-book.component.scss', './list-book.component.skeleton.scss']
 })
-export class ListBookComponent implements OnInit {
+export class ListBookComponent extends MasterComponent implements OnInit {
+
+  constants = showBooksComponentConst.listBook;
 
   @Input() books: BookResponseModel[];
-  @Input() status: ServiceStatus;
 
-  iconPlus: IconDefinition;
-  iconMinus: IconDefinition;
-  iconEdit: IconDefinition;
-  iconDelete: IconDefinition;
 
   ngOnInit() {
 
-    this.iconPlus = faPlusSquare;
-    this.iconMinus = faMinusSquare;
-    this.iconDelete = faTrash;
-    this.iconEdit = faEdit;
 
   }
 
