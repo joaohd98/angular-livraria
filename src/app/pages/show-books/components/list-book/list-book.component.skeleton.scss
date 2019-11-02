@@ -15,23 +15,23 @@
     background-repeat: no-repeat;
 
     background-image:
-      linear-gradient(100deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0) 80%), // animation icon
+      linear-gradient(100deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 10%, rgba(255, 255, 255, 0) 90%), // animation icon
       linear-gradient(lightgray 100%, transparent 0), // img
 
-      linear-gradient(100deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0) 80%), // animation title
+      linear-gradient(100deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 10%, rgba(255, 255, 255, 0) 90%), // animation title
       linear-gradient(lightgray 100%, transparent 0), // title
 
-      linear-gradient(100deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0) 80%), // animation button
+      linear-gradient(100deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 10%, rgba(255, 255, 255, 0) 90%), // animation button
       linear-gradient(lightgray 100%, transparent 0); // button
 
     background-size:
-      10px 100%, //animation icon
+      20px 100%, //animation icon
       25px 25px, // button
 
-      20px 100%, //animation icon
+      40px 100%, //animation icon
       30% 30px, // title
 
-      30px 100%, //animation icon
+      25px 100%, //animation icon
       90px 35px; // artist
 
 
@@ -42,8 +42,8 @@
       60px 50%, //animation title
       60px 50%, // title
 
-      96.5% 50%, //animation title
-      96.5% 50%; // artist
+      80% 50%, //animation title
+      96% 50%; // artist
 
 
     animation: loading-book 0.8s infinite linear;
@@ -52,14 +52,15 @@
 
   @keyframes loading-book {
     to {
-      background-position: 30px  20px, //animation img
+      background-position: 50px  50%, //animation img
       15px 50%, // img
 
-      60px 50%, //animation title
+      40% 50%, //animation title
       60px 50%, // title
 
-      96.5% 50%, //animation title
-      96.5% 50%; // artist
+      100% 50%, //animation title
+      96% 50%; // artist
+
     }
   }
 
