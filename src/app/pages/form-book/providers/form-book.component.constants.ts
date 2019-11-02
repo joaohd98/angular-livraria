@@ -30,9 +30,11 @@ export const formBookComponentConstants = {
   },
   inputPrice: {
     name: 'price',
-    type: 'number',
+    type: 'tel',
     label: 'Preço do livro',
     placeholder: 'Digite o preço do livro',
+    mask: 'separator.2',
+    thousandSeparator: '.Z',
     requiredType: 'required',
     requiredMessage: 'Campo preço do livro é obrigatório',
     patternType: 'pattern',

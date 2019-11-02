@@ -20,10 +20,8 @@ export class InputComponent implements OnInit {
   @Input() label: string;
   @Input() type = 'text';
   @Input() placeholder: string;
-  // @Input() mask: BrMaskModel = new BrMaskModel();
-
-  constructor() { }
-
+  @Input() mask: string;
+  @Input() thousandSeparator: string;
 
   ngOnInit(){
 

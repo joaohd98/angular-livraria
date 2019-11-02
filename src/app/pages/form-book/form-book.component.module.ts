@@ -5,6 +5,8 @@ import { InputNameComponent } from './components/input-name/input-name.component
 import { InputPriceComponent } from './components/input-price/input-price.component';
 import { InputAuthorComponent } from './components/input-author/input-author.component';
 import {InputComponentModule} from '../../components/input/input.component.module';
+import {IConfig, NgxMaskModule} from 'ngx-mask';
+
 
 @NgModule({
   declarations: [
@@ -15,7 +17,7 @@ import {InputComponentModule} from '../../components/input/input.component.modul
   ],
   imports: [
     BrowserModule,
-    InputComponentModule
+    InputComponentModule,
   ],
 })
 export class FormBookComponentModule { }
