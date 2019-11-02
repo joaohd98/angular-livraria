@@ -35,6 +35,7 @@ export class ShowBooksComponentInteractor {
     }, () => {
 
       this.component.status = ServiceStatus.hasIssue;
+      this.component.hasNext = false;
 
     });
 
@@ -59,7 +60,7 @@ export class ShowBooksComponentInteractor {
     }, () => {
 
       this.component.status = ServiceStatus.hasIssue;
-
+      this.component.hasNext = false;
     });
 
 
@@ -81,6 +82,7 @@ export class ShowBooksComponentInteractor {
     }, () => {
 
       this.component.status = ServiceStatus.hasIssue;
+      this.component.hasNext = false;
 
     });
 

@@ -17,7 +17,6 @@ export class FooterLoadingComponent extends MasterComponent implements OnChanges
   @Input() books: BookResponseModel[];
   hasReachBottom: boolean;
 
-
   constants = showBooksComponentConst.footerLoading;
 
   ngOnChanges(changes: SimpleChanges): void {
