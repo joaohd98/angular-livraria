@@ -1,4 +1,4 @@
 <div class="footer-loading text-center" *ngIf="hasNext">
   <app-spinner *ngIf="hasReachBottom"></app-spinner>
-  <button *ngIf="hasNextButton" (click)="getMoreBooks()" class="btn btn-outline-success">{{ constants.btnText }}</button>
+  <button *ngIf="hasNextButton" (click)="interactor.getMoreBooks()" class="btn btn-outline-success">{{ constants.btnText }}</button>
 </div>

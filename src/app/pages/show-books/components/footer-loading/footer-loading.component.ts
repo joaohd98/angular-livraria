@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, HostListener, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {MasterComponent} from '../../../../helpers/master/master-component';
 import {showBooksComponentConst} from '../../providers/show-books.component.constants';
 import {ShowBooksComponentInteractor} from '../../providers/show-books.component.interactor';
@@ -8,7 +8,7 @@ import {ShowBooksComponentInteractor} from '../../providers/show-books.component
   templateUrl: './footer-loading.component.html',
   styleUrls: ['./footer-loading.component.scss']
 })
-export class FooterLoadingComponent extends MasterComponent implements OnInit {
+export class FooterLoadingComponent extends MasterComponent implements OnChanges {
 
   @Input() interactor: ShowBooksComponentInteractor;
   @Input() hasNext: boolean;
@@ -17,13 +17,25 @@ export class FooterLoadingComponent extends MasterComponent implements OnInit {
 
   constants = showBooksComponentConst.footerLoading;
 
-  ngOnInit() {
+  ngOnChanges(changes: SimpleChanges): void {
+
+    console.log(changes);
 
   }
 
-  getMoreBooks() {
+  @HostListener('window:scroll', [])
+  onScroll() {
 
-    this.interactor.getMoreBooks();
+    // Has reach bottom
+    if (!this.hasNextButton) {
+
+      if ((!this.hasReachBottom && window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+
+        this.hasReachBottom = true;
+
+      }
+
+    }
 
   }
 

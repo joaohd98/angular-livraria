@@ -3,7 +3,7 @@ import {ShowBooksComponent} from '../show-books.component';
 
 export class ShowBooksComponentInteractor {
 
-  private component: ShowBooksComponent;
+  private readonly component: ShowBooksComponent;
 
   constructor(component: ShowBooksComponent) {
     this.component = component;
@@ -16,6 +16,12 @@ export class ShowBooksComponentInteractor {
     this.component.hasNext = false;
     this.component.hasNextButton = true;
     this.component.books = [];
+
+  }
+
+  checkHasButton() {
+
+    return this.component.page === 1;
 
   }
 
@@ -51,6 +57,7 @@ export class ShowBooksComponentInteractor {
 
     this.component.status = ServiceStatus.isLoading;
     this.component.page++;
+    this.component.hasNextButton = false;
 
     const { searchText, page, constants } = this.component;
 
@@ -74,7 +81,6 @@ export class ShowBooksComponentInteractor {
 
     this.component.searchText = searchText;
     this.component.page = 1;
-    this.component.status = ServiceStatus.isLoading;
 
     this.component.listBookService.callRequest(searchText, this.component.page, this.component.constants.limit).then(response => {
 
@@ -82,6 +88,7 @@ export class ShowBooksComponentInteractor {
 
       this.component.books = response.data.books;
       this.component.hasNext = response.data.total > this.component.page * this.component.constants.limit;
+      this.component.hasNextButton = true;
 
     }, () => {
 
@@ -89,6 +96,10 @@ export class ShowBooksComponentInteractor {
 
     });
 
+  }
+
+  getQuantityBooks(): number {
+    return this.component.books.length;
   }
 
 }
