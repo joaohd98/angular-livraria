@@ -19,18 +19,6 @@ export class ShowBooksComponentInteractor {
 
   }
 
-  checkHasButton() {
-
-    return this.component.page === 1;
-
-  }
-
-  hasBooks() {
-
-    return this.component.books.length > 0;
-
-  }
-
   getBooks() {
 
     this.component.status = ServiceStatus.isLoading;
@@ -98,8 +86,11 @@ export class ShowBooksComponentInteractor {
 
   }
 
-  getQuantityBooks(): number {
-    return this.component.books.length;
+  getPaginationIndex() {
+
+    return this.component.page;
+
   }
+
 
 }
