@@ -1,4 +1,4 @@
-<div class="text-center">
-<!--  <app-spinner *ngIf=""></app-spinner>-->
-<!--  <button *ngIf="!isLoading" class="btn btn-outline-success">{{ constants.btnText }}</button>-->
+<div class="text-center" *ngIf="hasNext">
+  <app-spinner *ngIf="hasReachBottom"></app-spinner>
+  <button *ngIf="hasNextButton" class="btn btn-outline-success">{{ constants.btnText }}</button>
 </div>

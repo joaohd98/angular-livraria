@@ -9,6 +9,10 @@ import {showBooksComponentConst} from '../../providers/show-books.component.cons
 })
 export class FooterLoadingComponent extends MasterComponent implements OnInit {
 
+  @Input() hasNext: boolean;
+  @Input() hasNextButton: boolean;
+  hasReachBottom: boolean;
+
   constants = showBooksComponentConst.footerLoading;
 
   ngOnInit() {

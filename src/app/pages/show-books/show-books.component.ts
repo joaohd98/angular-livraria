@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ListBooksService} from '../../services/list-books/list-books.service';
 import {MasterPage} from '../../helpers/master/master-page';
-import {ServiceStatus} from '../../services';
 import {BookResponseModel} from '../../models/book/book-response-model';
 import {showBooksComponentConst} from './providers/show-books.component.constants';
 import {ShowBooksComponentInteractor} from './providers/show-books.component.interactor';
@@ -13,6 +12,7 @@ import {ShowBooksComponentInteractor} from './providers/show-books.component.int
 })
 export class ShowBooksComponent extends MasterPage implements OnInit {
 
+  interactor: ShowBooksComponentInteractor;
   searchText: string;
   page: number;
   hasNext: boolean;
@@ -24,36 +24,17 @@ export class ShowBooksComponent extends MasterPage implements OnInit {
   constructor(public listBookService: ListBooksService) {
     super();
 
-    ShowBooksComponentInteractor.setDefaultPageValue(this);
+    this.interactor = new ShowBooksComponentInteractor(this);
+
+    this.interactor.setDefaultPageValue();
 
   }
 
   ngOnInit() {
 
-    this.status = ServiceStatus.isLoading;
-
-    this.listBookService.callRequest(this.searchText, this.page, this.constants.limit).then(response => {
-
-      this.status = ServiceStatus.success;
-
-      this.books = response.data.books;
-      this.hasNext = response.data.total > this.page * this.constants.limit;
-
-    }, () => {
-
-      this.status = ServiceStatus.hasIssue;
-
-    });
+    this.interactor.getBooks();
 
   }
 
-  searchInput() {
-
-  }
-
-  getMoreBooks() {
-
-
-  }
 
 }
