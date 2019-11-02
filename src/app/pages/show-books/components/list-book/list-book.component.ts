@@ -14,7 +14,7 @@ export class ListBookComponent extends MasterComponent {
 
   @Input() searchText: string;
   @Input() books: BookResponseModel[];
-  @Input() interactor: ShowBooksComponentInteractor[];
+  @Input() interactor: ShowBooksComponentInteractor;
 
   constants = showBooksComponentConst.listBook;
 
