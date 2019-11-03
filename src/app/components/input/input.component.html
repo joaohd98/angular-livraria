@@ -6,6 +6,7 @@
          [placeholder]="placeholder" (focus)="focus(true)" (blur)="focus(false)" />
   <input *ngIf="!hasMoneyMask" class="form-control" [formControlName]="name" [type]="type"
          [placeholder]="placeholder" (focus)="focus(true)" (blur)="focus(false)" />
+
   <div class="message-container">
     <ng-container *ngFor="let validation of formMessage.content">
       <div class="messages {{abstractControl['focus'] ? 'validation-warning' : 'validation-errors'}}" *ngIf="abstractControl.hasError(validation.type) && (abstractControl.touched || abstractControl.value)" >
