@@ -1,6 +1,6 @@
 import {ServiceStatus} from '../../../services';
 import {ShowBooksComponent} from '../show-books.component';
-import Swal from "sweetalert2";
+import Swal from 'sweetalert2';
 
 export class ShowBooksComponentInteractor {
 

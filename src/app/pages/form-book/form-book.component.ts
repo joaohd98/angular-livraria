@@ -6,8 +6,8 @@ import {BookResponseModel} from '../../models/book/book-response-model';
 import {AddBookService} from '../../services/add-book/add-book.service';
 import {formBookComponentConstants} from './providers/form-book.component.constants';
 import {ActivatedRoute, Router} from '@angular/router';
-import Swal from 'sweetalert2';
 import {GetBookService} from '../../services/get-book/get-book.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-form-book',
@@ -29,7 +29,8 @@ export class FormBookComponent implements OnInit {
     public addBookService: AddBookService,
     public getBookService: GetBookService,
     public router: Router,
-    public activatedRoute: ActivatedRoute) {
+    public activatedRoute: ActivatedRoute,
+    public location: Location) {
 
     this.interactor =  new FormBookComponentInteractor(this);
 
@@ -60,10 +61,12 @@ export class FormBookComponent implements OnInit {
 
   }
 
+
   submitForm(value: BookResponseModel) {
 
     this.interactor.addBook(value);
 
   }
+
 
 }

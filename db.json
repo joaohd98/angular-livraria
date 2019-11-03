@@ -1,12 +1,6 @@
 {
   "books": [
     {
-      "id": 15,
-      "name": "json-server",
-      "author": "typicode",
-      "price": 1212313
-    },
-    {
       "id": 16,
       "name": "json-server",
       "author": "typicode",

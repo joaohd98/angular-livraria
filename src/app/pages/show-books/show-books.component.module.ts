@@ -26,7 +26,7 @@ import {RouterModule} from '@angular/router';
     SpinnerComponentModule,
     FormatMoneyPipeModule,
     FormsModule,
-    RouterModule
+    RouterModule,
   ],
 })
 export class ShowBooksComponentModule { }

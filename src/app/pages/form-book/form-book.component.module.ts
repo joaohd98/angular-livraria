@@ -7,6 +7,8 @@ import { InputAuthorComponent } from './components/input-author/input-author.com
 import {InputComponentModule} from '../../components/input/input.component.module';
 import {ReactiveFormsModule} from '@angular/forms';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+import {IconComponentModule} from '../../components/icon/icon.component.module';
+import {RouterModule} from '@angular/router';
 
 
 @NgModule({
@@ -21,6 +23,8 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
     InputComponentModule,
     ReactiveFormsModule,
     SweetAlert2Module,
+    IconComponentModule,
+    RouterModule,
   ],
 })
 export class FormBookComponentModule { }

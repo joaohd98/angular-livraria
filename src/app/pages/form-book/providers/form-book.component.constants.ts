@@ -1,9 +1,5 @@
-// interface Const {
-//   page: MasterConstants;
-//   inputAuthor: MasterConstants;
-//   inputName: MasterConstants;
-//   inputPrice: MasterConstants
-// }
+import {faArrowLeft} from '@fortawesome/free-solid-svg-icons';
+
 export const formBookComponentConstants = {
 
   page: {
@@ -15,6 +11,7 @@ export const formBookComponentConstants = {
     alertTitleLoading: 'Carregando...',
     errorAdd: 'Não foi possível adicionar o livro.',
     errorEdit: 'Não foi possível adicionar o livro.',
+    iconBack: faArrowLeft,
   },
   inputAuthor: {
     name: 'author',
