@@ -34,6 +34,7 @@ export class InputComponent implements OnInit {
 
     const abstractControl = this.abstractControl;
 
+
     if (abstractControl.valid && abstractControl.value)
       return 'has-success';
 

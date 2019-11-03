@@ -1,14 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import {FormGroup} from '@angular/forms';
 import {FormGroupMessage} from '../../validators/form-group-message';
 import {FormBookComponentInteractor} from './providers/form-book.component.interactor';
+import {BookResponseModel} from '../../models/book/book-response-model';
 
 @Component({
   selector: 'app-form-book',
   templateUrl: './form-book.component.html',
   styleUrls: ['./form-book.component.scss']
 })
-export class FormBookComponent implements OnInit {
+export class FormBookComponent {
 
   interactor: FormBookComponentInteractor;
   formGroup: FormGroup;
@@ -23,7 +24,7 @@ export class FormBookComponent implements OnInit {
 
   }
 
-  ngOnInit() {
+  submitForm(value: BookResponseModel) {
 
   }
 

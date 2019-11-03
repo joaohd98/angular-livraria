@@ -1,7 +1,7 @@
 <div class="row-title">
   Adicionar
 </div>
-<form>
+<form [formGroup]="formGroup" (ngSubmit)="submitForm(formGroup.value)">
   <div class="row-inputs">
     <app-input-name [formGroup]="formGroup" [formGroupMessage]="formGroupMessage"></app-input-name>
     <app-input-author [formGroup]="formGroup" [formGroupMessage]="formGroupMessage"></app-input-author>
