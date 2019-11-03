@@ -3,6 +3,7 @@ import {FormGroup} from '@angular/forms';
 import {FormGroupMessage} from '../../validators/form-group-message';
 import {FormBookComponentInteractor} from './providers/form-book.component.interactor';
 import {BookResponseModel} from '../../models/book/book-response-model';
+import {AddBookService} from '../../services/add-book/add-book.service';
 
 @Component({
   selector: 'app-form-book',
@@ -15,7 +16,7 @@ export class FormBookComponent {
   formGroup: FormGroup;
   formGroupMessage: FormGroupMessage[];
 
-  constructor() {
+  constructor(public addBookService: AddBookService) {
 
     this.interactor =  new FormBookComponentInteractor(this);
 
@@ -25,6 +26,8 @@ export class FormBookComponent {
   }
 
   submitForm(value: BookResponseModel) {
+
+    this.interactor.addBook(value);
 
   }
 

@@ -10,7 +10,7 @@ import {ListBookResponseModel} from '../../models/list-books/list-book-response-
 })
 export class ListBooksService {
 
-  constructor(public httpClient: HttpClient) {}
+  constructor(private httpClient: HttpClient) {}
 
   callRequest(searchText: string, page: number, limit: number): Promise<ServiceResponse<ListBookResponseModel>> {
 

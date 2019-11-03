@@ -2,6 +2,7 @@ import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {FormBookComponent} from '../form-book.component';
 import {FormGroupMessage} from '../../../validators/form-group-message';
 import {formBookComponentConstants} from './form-book.component.constants';
+import {BookResponseModel} from '../../../models/book/book-response-model';
 
 export class FormBookComponentInteractor {
 
@@ -55,6 +56,17 @@ export class FormBookComponentInteractor {
         ]
       },
     ];
+
+  }
+
+  addBook(request: BookResponseModel) {
+
+    this.component.addBookService.callRequest(request).then(resposnse => {
+
+
+    }, () => {
+
+    });
 
   }
 

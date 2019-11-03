@@ -21,7 +21,7 @@ export const serviceConst = {
   book: {
     list: 'books',
     get: 'books/{id}',
-    add: 'books/{id}',
+    add: 'books',
     edit: 'books/{id}',
     remove: 'books/{id}',
   }
