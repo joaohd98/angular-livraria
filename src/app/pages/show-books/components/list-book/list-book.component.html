@@ -1,7 +1,7 @@
 <div *ngIf="isEmpty()" class="list-empty">
   <h1>{{ constants.emptyTitle }}</h1>
   <p>{{ constants.emptyMessage }}</p>
-  <button class="btn btn-success">{{ constants.emptyButton }}</button>
+  <button routerLink="/adicionar"  class="btn btn-success" >{{ constants.emptyButton }}</button>
 </div>
 
 <div *ngIf="isFilter()" class="list-filter">
@@ -9,9 +9,10 @@
   <p>{{ constants.filterMessage}}</p>
 </div>
 
-<div *ngIf="isIssue()" class="list-filter">
+<div *ngIf="isIssue()" class="list-issue">
   <h1>{{ constants.issueTitle}}</h1>
   <p>{{ constants.issueMessage}}</p>
+  <button (click)="interactor.getBooks()" class="btn btn-success" >{{ constants.issueButton }}</button>
 </div>
 
 <div *ngIf="isLoading()" class="list-loading">

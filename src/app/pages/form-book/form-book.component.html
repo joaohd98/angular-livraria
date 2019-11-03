@@ -7,7 +7,7 @@
 <div class="screen-issue" *ngIf="status === serviceStatus.hasIssue">
   <h1>{{ constants.screenIssueTitle }}</h1>
   <p>{{ constants.screenIssueMessage }}</p>
-  <button class="btn btn-success">{{ constants.screenIssueButton }}</button>
+  <button class="btn btn-success" (click)="interactor.getBook(this.id)">{{ constants.screenIssueButton }}</button>
 </div>
 
 <div class="screen-loading" *ngIf="status === serviceStatus.isLoading">
