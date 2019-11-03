@@ -73,6 +73,8 @@ export class FormBookComponentInteractor {
 
           Swal.close();
 
+          this.component.router.navigateByUrl('/', { state: { add: true } });
+
         }, () => {
 
           Swal.close();

@@ -5,6 +5,7 @@ import {BookResponseModel} from '../../models/book/book-response-model';
 import {showBooksComponentConst} from './providers/show-books.component.constants';
 import {ShowBooksComponentInteractor} from './providers/show-books.component.interactor';
 import { Router } from '@angular/router';
+import Swal from "sweetalert2";
 
 @Component({
   selector: 'app-show-books',
@@ -22,18 +23,35 @@ export class ShowBooksComponent extends MasterPage implements OnInit {
 
   constants = showBooksComponentConst.page;
 
-  constructor(public listBookService: ListBooksService) {
+  constructor(public listBookService: ListBooksService, public router: Router) {
     super();
 
     this.interactor = new ShowBooksComponentInteractor(this);
 
     this.interactor.setDefaultPageValue();
 
+    const { state } = this.router.getCurrentNavigation().extras;
+
+    if (state) {
+      
+      if (state.add)
+        Swal.fire('Sucesso', 'Livro adicionado com sucesso', 'success');
+
+      if (state.edit)
+        Swal.fire('Sucesso', 'Livro atualizado com sucesso', 'success');
+
+    }
+
   }
 
   ngOnInit() {
 
+
+
+
     this.interactor.getBooks();
+
+
 
   }
 

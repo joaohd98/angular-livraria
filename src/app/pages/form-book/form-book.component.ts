@@ -1,10 +1,12 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormGroup} from '@angular/forms';
 import {FormGroupMessage} from '../../validators/form-group-message';
 import {FormBookComponentInteractor} from './providers/form-book.component.interactor';
 import {BookResponseModel} from '../../models/book/book-response-model';
 import {AddBookService} from '../../services/add-book/add-book.service';
 import {formBookComponentConstants} from './providers/form-book.component.constants';
+import {Router} from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-form-book',
@@ -19,7 +21,7 @@ export class FormBookComponent {
 
   constants = formBookComponentConstants.page;
 
-  constructor(public addBookService: AddBookService) {
+  constructor(public addBookService: AddBookService, public router: Router) {
 
     this.interactor =  new FormBookComponentInteractor(this);
 
@@ -33,5 +35,7 @@ export class FormBookComponent {
     this.interactor.addBook(value);
 
   }
+
+
 
 }
