@@ -3,6 +3,7 @@ import {FormBookComponent} from '../form-book.component';
 import {FormGroupMessage} from '../../../validators/form-group-message';
 import {formBookComponentConstants} from './form-book.component.constants';
 import {BookResponseModel} from '../../../models/book/book-response-model';
+import Swal from 'sweetalert2';
 
 export class FormBookComponentInteractor {
 
@@ -61,12 +62,27 @@ export class FormBookComponentInteractor {
 
   addBook(request: BookResponseModel) {
 
-    this.component.addBookService.callRequest(request).then(resposnse => {
+    Swal.fire({
+      title: this.component.constants.alertTitleLoading,
+      allowOutsideClick: false,
+      onBeforeOpen: () => {
 
+        Swal.showLoading();
 
-    }, () => {
+        this.component.addBookService.callRequest(request).then(() => {
 
+          Swal.close();
+
+        }, () => {
+
+          Swal.close();
+          Swal.fire(this.component.constants.alertTitle, this.component.constants.errorAdd, 'error' );
+
+        });
+
+      }
     });
+
 
   }
 

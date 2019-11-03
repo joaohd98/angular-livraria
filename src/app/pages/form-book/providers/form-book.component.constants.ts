@@ -10,7 +10,11 @@ export const formBookComponentConstants = {
     titleAdd: 'Adicionar Livro',
     titleEdit: 'Atualizar',
     btnAdd: 'Adicionar',
-    btnEdit: 'Atualizar'
+    btnEdit: 'Atualizar',
+    alertTitle: 'Aviso',
+    alertTitleLoading: 'Carregando...',
+    errorAdd: 'Não foi possível adicionar o livro.',
+    errorEdit: 'Não foi possível adicionar o livro.',
   },
   inputAuthor: {
     name: 'author',
@@ -33,7 +37,7 @@ export const formBookComponentConstants = {
     type: 'tel',
     label: 'Preço do livro',
     placeholder: 'Digite o preço do livro',
-    mask: "true",
+    mask: 'true',
     thousandSeparator: '.',
     requiredType: 'required',
     requiredMessage: 'Campo preço do livro é obrigatório',

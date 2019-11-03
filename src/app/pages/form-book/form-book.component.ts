@@ -4,6 +4,7 @@ import {FormGroupMessage} from '../../validators/form-group-message';
 import {FormBookComponentInteractor} from './providers/form-book.component.interactor';
 import {BookResponseModel} from '../../models/book/book-response-model';
 import {AddBookService} from '../../services/add-book/add-book.service';
+import {formBookComponentConstants} from './providers/form-book.component.constants';
 
 @Component({
   selector: 'app-form-book',
@@ -15,6 +16,8 @@ export class FormBookComponent {
   interactor: FormBookComponentInteractor;
   formGroup: FormGroup;
   formGroupMessage: FormGroupMessage[];
+
+  constants = formBookComponentConstants.page;
 
   constructor(public addBookService: AddBookService) {
 

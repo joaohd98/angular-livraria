@@ -6,6 +6,7 @@ import { InputPriceComponent } from './components/input-price/input-price.compon
 import { InputAuthorComponent } from './components/input-author/input-author.component';
 import {InputComponentModule} from '../../components/input/input.component.module';
 import {ReactiveFormsModule} from '@angular/forms';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import {ReactiveFormsModule} from '@angular/forms';
     BrowserModule,
     InputComponentModule,
     ReactiveFormsModule,
+    SweetAlert2Module,
   ],
 })
 export class FormBookComponentModule { }
