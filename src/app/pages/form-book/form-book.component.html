@@ -1,5 +1,5 @@
 <div class="row-title">
-  Adicionar
+  {{ title }}
 </div>
 <form [formGroup]="formGroup" (ngSubmit)="submitForm(formGroup.value)">
   <div class="row-inputs">
@@ -8,7 +8,7 @@
     <app-input-price [formGroup]="formGroup" [formGroupMessage]="formGroupMessage"></app-input-price>
   </div>
   <div class="row-button">
-    <button class="btn btn-success" [disabled]="!formGroup.valid">Adicionar Livro</button>
+    <button class="btn btn-success" [disabled]="!formGroup.valid">{{ btnText }}</button>
   </div>
 </form>
 

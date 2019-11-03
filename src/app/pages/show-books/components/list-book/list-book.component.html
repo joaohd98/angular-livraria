@@ -32,7 +32,7 @@
         <div ngbDropdown>
           <button class="btn btn-outline-dark" ngbDropdownToggle>Opções</button>
           <div ngbDropdownMenu>
-            <button ngbDropdownItem (click)="editBook(book.id)" class="btn-outline-success">
+            <button ngbDropdownItem [routerLink]="['editar', book.id]" class="btn-outline-success">
               <app-icon [iconName]="constants.iconEdit"></app-icon>Editar
             </button>
             <button ngbDropdownItem (click)="deleteBook(book.id)" class="btn-outline-danger">

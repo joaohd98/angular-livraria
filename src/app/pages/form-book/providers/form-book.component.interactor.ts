@@ -88,4 +88,20 @@ export class FormBookComponentInteractor {
 
   }
 
+  getBook(id: string) {
+
+    this.component.getBookService.callRequest(id).then(response => {
+
+      this.component.formGroup.setValue({
+        name: response.name,
+        author: response.author,
+        price: response.price
+      });
+
+    }, () => {
+
+    });
+
+  }
+
 }

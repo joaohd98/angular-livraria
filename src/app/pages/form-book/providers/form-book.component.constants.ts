@@ -8,7 +8,7 @@ export const formBookComponentConstants = {
 
   page: {
     titleAdd: 'Adicionar Livro',
-    titleEdit: 'Atualizar',
+    titleEdit: 'Atualizar Livro',
     btnAdd: 'Adicionar',
     btnEdit: 'Atualizar',
     alertTitle: 'Aviso',
