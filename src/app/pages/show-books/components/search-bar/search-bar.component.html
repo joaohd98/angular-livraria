@@ -1,7 +1,4 @@
 <div *ngIf="showSearchBar()">
-  <div class="add-row">
-    <button routerLink="/adicionar" class="btn btn-success btn-sm">Adicionar Livro</button>
-  </div>
   <div class="input-group" >
     <input class="form-control" [(ngModel)]="searchText" (input)="filterBooks()" [placeholder]="constants.placeholder">
   </div>
