@@ -16,7 +16,7 @@ export class ListBooksService {
 
     return new Promise((resolve, reject) => {
 
-      const url = Service.setGetParamater(
+      const url = Service.setGetParameter(
         Service.setURl(serviceConst.book.list),
         [
           {name: 'q', value: searchText},

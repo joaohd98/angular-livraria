@@ -18,6 +18,16 @@ export class ListBookComponent extends MasterComponent {
 
   constants = showBooksComponentConst.listBook;
 
+  editBook(id: string) {
+
+  }
+
+  deleteBook(id: string) {
+
+    this.interactor.deleteBook(id);
+
+  }
+  
   isFilter(): boolean {
 
     return this.status === ServiceStatus.success && this.books.length === 0 && this.searchText !== '';

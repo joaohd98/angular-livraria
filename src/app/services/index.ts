@@ -23,7 +23,7 @@ export const serviceConst = {
     get: 'books/{id}',
     add: 'books',
     edit: 'books/{id}',
-    remove: 'books/{id}',
+    delete: 'books/{id}',
   }
 
 };
@@ -32,7 +32,7 @@ export class Service {
 
   static setURl = (path: string): string => environment.url + path;
 
-  static setGetParamater(url: string, parameters: {name: string, value: string | number}[] ): string {
+  static setGetParameter(url: string, parameters: {name: string, value: string | number}[] ): string {
 
     let firstTry = true;
 
@@ -52,6 +52,15 @@ export class Service {
       url += paramater.name + '=' + paramater.value;
 
     });
+
+    return url;
+
+  }
+
+
+  static setPageGetParameter(url: string, parameters: {name: string, value: string | number}[] ): string {
+
+    parameters.forEach(paramater => url = url.replace(`{${paramater.name}}`, String(paramater.value)));
 
     return url;
 

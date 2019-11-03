@@ -1,5 +1,6 @@
 import {ServiceStatus} from '../../../services';
 import {ShowBooksComponent} from '../show-books.component';
+import Swal from "sweetalert2";
 
 export class ShowBooksComponentInteractor {
 
@@ -83,6 +84,34 @@ export class ShowBooksComponentInteractor {
       this.component.status = ServiceStatus.hasIssue;
       this.component.hasNext = false;
 
+    });
+
+  }
+
+  deleteBook(id: string) {
+
+    Swal.fire({
+      title: this.component.constants.alertTitleLoading,
+      allowOutsideClick: false,
+      onBeforeOpen: () => {
+
+        Swal.showLoading();
+
+        this.component.deleteBookService.callRequest(id).then(() => {
+
+          this.getBooks();
+
+          Swal.close();
+          Swal.fire(this.component.constants.alertTitle, this.component.constants.alertMessageDeleteSuccess, 'success' );
+
+        }, () => {
+
+          Swal.close();
+          Swal.fire(this.component.constants.alertTitleError, this.component.constants.alertMessageDeleteError, 'error' );
+
+        });
+
+      }
     });
 
   }

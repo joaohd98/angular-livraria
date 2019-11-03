@@ -6,6 +6,7 @@ import {showBooksComponentConst} from './providers/show-books.component.constant
 import {ShowBooksComponentInteractor} from './providers/show-books.component.interactor';
 import { Router } from '@angular/router';
 import Swal from "sweetalert2";
+import {DeleteBookService} from '../../services/delete-book/delete-book.service';
 
 @Component({
   selector: 'app-show-books',
@@ -23,7 +24,10 @@ export class ShowBooksComponent extends MasterPage implements OnInit {
 
   constants = showBooksComponentConst.page;
 
-  constructor(public listBookService: ListBooksService, public router: Router) {
+  constructor(
+    public listBookService: ListBooksService,
+    public deleteBookService: DeleteBookService,
+    public router: Router) {
     super();
 
     this.interactor = new ShowBooksComponentInteractor(this);

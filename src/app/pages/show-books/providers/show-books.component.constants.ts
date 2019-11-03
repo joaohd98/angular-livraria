@@ -5,8 +5,12 @@ export const showBooksComponentConst = {
   page: {
     limit: 10,
     alertTitle: 'Sucesso',
+    alertTitleError: 'Aviso',
+    alertTitleLoading: 'Carregando...',
     alertMessageAddSuccess: 'Livro adicionado com sucesso.',
     alertMessageEditSuccess: 'Livro atualizado com sucesso',
+    alertMessageDeleteSuccess: 'Livro deletado com sucesso',
+    alertMessageDeleteError: 'Não foi possível deletar o livro',
   },
   searchBar: {
     placeholder: 'Digite o nome ou autor do livro...',

@@ -32,10 +32,10 @@
         <div ngbDropdown>
           <button class="btn btn-outline-dark" ngbDropdownToggle>Opções</button>
           <div ngbDropdownMenu>
-            <button ngbDropdownItem class="btn-outline-success">
+            <button ngbDropdownItem (click)="editBook(book.id)" class="btn-outline-success">
               <app-icon [iconName]="constants.iconEdit"></app-icon>Editar
             </button>
-            <button ngbDropdownItem class="btn-outline-danger">
+            <button ngbDropdownItem (click)="deleteBook(book.id)" class="btn-outline-danger">
               <app-icon [iconName]="constants.iconDelete"></app-icon>Deletar
             </button>
           </div>

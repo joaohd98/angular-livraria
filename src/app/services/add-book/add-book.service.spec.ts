@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 
 import { AddBookService } from './add-book.service';
 
-describe('AddBookService', () => {
+describe('DeleteBookService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
