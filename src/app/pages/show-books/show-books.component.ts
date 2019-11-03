@@ -33,12 +33,12 @@ export class ShowBooksComponent extends MasterPage implements OnInit {
     const { state } = this.router.getCurrentNavigation().extras;
 
     if (state) {
-      
+
       if (state.add)
-        Swal.fire('Sucesso', 'Livro adicionado com sucesso', 'success');
+        Swal.fire(this.constants.alertTitle, this.constants.alertMessageAddSuccess, 'success');
 
       if (state.edit)
-        Swal.fire('Sucesso', 'Livro atualizado com sucesso', 'success');
+        Swal.fire(this.constants.alertTitle, this.constants.alertMessageEditSuccess, 'success');
 
     }
 

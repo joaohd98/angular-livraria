@@ -4,6 +4,9 @@ export const showBooksComponentConst = {
 
   page: {
     limit: 10,
+    alertTitle: 'Sucesso',
+    alertMessageAddSuccess: 'Livro adicionado com sucesso.',
+    alertMessageEditSuccess: 'Livro atualizado com sucesso',
   },
   searchBar: {
     placeholder: 'Digite o nome ou autor do livro...',
