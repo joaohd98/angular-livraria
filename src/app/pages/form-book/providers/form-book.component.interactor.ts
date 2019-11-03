@@ -24,7 +24,7 @@ export class FormBookComponentInteractor {
       ])),
       price: new FormControl('', Validators.compose([
         Validators.required,
-        Validators.pattern('^[0-9]{1,2}([,.][0-9]{1,2})?$')
+        Validators.pattern('^\\$?(?!0.00)(([0-9]{1,3}.([0-9]{3}.)*)[0-9]{3}|[0-9]{1,3})(\\,[0-9]{2})?$')
       ])),
     });
 

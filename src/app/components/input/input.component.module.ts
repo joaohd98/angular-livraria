@@ -2,9 +2,19 @@ import {NgModule} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {InputComponent} from './input.component';
 import {CommonModule} from '@angular/common';
-import {IConfig, NgxMaskModule} from 'ngx-mask';
+import {NgxCurrencyModule} from 'ngx-currency';
 
-const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
+export const customCurrencyMaskConfig = {
+  align: 'left',
+  allowNegative: false,
+  allowZero: false,
+  decimal: ',',
+  precision: 2,
+  prefix: 'R$ ',
+  suffix: '',
+  thousands: '.',
+  nullable: false
+};
 
 @NgModule({
   declarations: [
@@ -14,7 +24,7 @@ const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
     ReactiveFormsModule,
     FormsModule,
     CommonModule,
-    NgxMaskModule.forRoot(options)
+    NgxCurrencyModule.forRoot(customCurrencyMaskConfig)
   ],
   exports: [
     InputComponent

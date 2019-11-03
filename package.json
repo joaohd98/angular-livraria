@@ -23,6 +23,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.25",
     "@fortawesome/free-solid-svg-icons": "^5.11.2",
     "@ng-bootstrap/ng-bootstrap": "^5.1.2",
+    "ngx-currency": "^2.0.0",
     "ngx-mask": "^8.1.5",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",

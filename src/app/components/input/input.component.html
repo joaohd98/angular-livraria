@@ -2,8 +2,9 @@
   <label>
     {{ label }}
   </label>
-  <input class="form-control" [formControlName]="name" [type]="type"
-         [mask]="mask" [thousandSeparator]="thousandSeparator"
+  <input *ngIf="hasMoneyMask" class="form-control" [formControlName]="name" [type]="type" currencyMask
+         [placeholder]="placeholder" (focus)="focus(true)" (blur)="focus(false)" />
+  <input *ngIf="!hasMoneyMask" class="form-control" [formControlName]="name" [type]="type"
          [placeholder]="placeholder" (focus)="focus(true)" (blur)="focus(false)" />
   <div class="message-container">
     <ng-container *ngFor="let validation of formMessage.content">

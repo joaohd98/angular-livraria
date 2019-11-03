@@ -20,8 +20,7 @@ export class InputComponent implements OnInit {
   @Input() label: string;
   @Input() type = 'text';
   @Input() placeholder: string;
-  @Input() mask: string;
-  @Input() thousandSeparator: string;
+  @Input() hasMoneyMask: boolean;
 
   ngOnInit(){
 
@@ -35,14 +34,18 @@ export class InputComponent implements OnInit {
 
     const abstractControl = this.abstractControl;
 
-    if (abstractControl['focus'] && abstractControl.invalid && (abstractControl.touched || abstractControl.value))
-      return 'has-warning';
-
-    else if (!abstractControl['focus'] && abstractControl.invalid && (abstractControl.touched || abstractControl.value))
-      return 'has-error';
-
-    else if (abstractControl.valid && abstractControl.value)
+    if (abstractControl.valid && abstractControl.value)
       return 'has-success';
+
+    else if (abstractControl.invalid && (abstractControl.touched || abstractControl.value)) {
+
+      if (abstractControl['focus'])
+        return 'has-warning';
+
+      else
+        return 'has-error';
+
+    }
 
     else
       return '';
