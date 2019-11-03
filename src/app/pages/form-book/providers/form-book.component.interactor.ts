@@ -4,6 +4,7 @@ import {FormGroupMessage} from '../../../validators/form-group-message';
 import {formBookComponentConstants} from './form-book.component.constants';
 import {BookResponseModel} from '../../../models/book/book-response-model';
 import Swal from 'sweetalert2';
+import {ServiceStatus} from '../../../services';
 
 export class FormBookComponentInteractor {
 
@@ -90,6 +91,8 @@ export class FormBookComponentInteractor {
 
   getBook(id: string) {
 
+    this.component.status = ServiceStatus.isLoading;
+
     this.component.getBookService.callRequest(id).then(response => {
 
       this.component.formGroup.setValue({
@@ -98,7 +101,11 @@ export class FormBookComponentInteractor {
         price: response.price
       });
 
+      this.component.status = ServiceStatus.success;
+
     }, () => {
+
+      this.component.status = ServiceStatus.hasIssue;
 
     });
 

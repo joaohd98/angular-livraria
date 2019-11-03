@@ -9,6 +9,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import {IconComponentModule} from '../../components/icon/icon.component.module';
 import {RouterModule} from '@angular/router';
+import {SpinnerComponentModule} from '../../components/spinner/spinner.component.module';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import {RouterModule} from '@angular/router';
     SweetAlert2Module,
     IconComponentModule,
     RouterModule,
+    SpinnerComponentModule,
   ],
 })
 export class FormBookComponentModule { }

@@ -9,6 +9,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {GetBookService} from '../../services/get-book/get-book.service';
 import { Location } from '@angular/common';
 import {EditBookService} from '../../services/edit-book/edit-book.service';
+import {ServiceStatus} from '../../services';
 
 @Component({
   selector: 'app-form-book',
@@ -17,16 +18,17 @@ import {EditBookService} from '../../services/edit-book/edit-book.service';
 })
 export class FormBookComponent implements OnInit {
 
+  id: string;
   title: string;
   btnText: string;
-
-  id: string;
 
   interactor: FormBookComponentInteractor;
   formGroup: FormGroup;
   formGroupMessage: FormGroupMessage[];
 
   constants = formBookComponentConstants.page;
+  status = ServiceStatus.noAction;
+  serviceStatus = ServiceStatus;
 
   constructor(
     public addBookService: AddBookService,
