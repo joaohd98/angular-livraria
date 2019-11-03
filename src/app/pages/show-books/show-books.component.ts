@@ -4,6 +4,7 @@ import {MasterPage} from '../../helpers/master/master-page';
 import {BookResponseModel} from '../../models/book/book-response-model';
 import {showBooksComponentConst} from './providers/show-books.component.constants';
 import {ShowBooksComponentInteractor} from './providers/show-books.component.interactor';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-show-books',

@@ -9,6 +9,7 @@ import {IconComponentModule} from '../../components/icon/icon.component.module';
 import {SpinnerComponentModule} from '../../components/spinner/spinner.component.module';
 import {FormatMoneyPipeModule} from '../../pipes/format-money/format-money.pipe.module';
 import {FormsModule} from '@angular/forms';
+import {RouterModule} from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {FormsModule} from '@angular/forms';
     IconComponentModule,
     SpinnerComponentModule,
     FormatMoneyPipeModule,
-    FormsModule
+    FormsModule,
+    RouterModule
   ],
 })
 export class ShowBooksComponentModule { }
