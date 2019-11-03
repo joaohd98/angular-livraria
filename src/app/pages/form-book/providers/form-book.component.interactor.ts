@@ -104,4 +104,31 @@ export class FormBookComponentInteractor {
 
   }
 
+  editBook(id: string, request: BookResponseModel) {
+
+    Swal.fire({
+      title: this.component.constants.alertTitleLoading,
+      allowOutsideClick: false,
+      onBeforeOpen: () => {
+
+        Swal.showLoading();
+
+        this.component.editBookService.callRequest(id, request).then(() => {
+
+          Swal.close();
+
+          this.component.router.navigateByUrl('/', { state: { edit: true } });
+
+        }, () => {
+
+          Swal.close();
+          Swal.fire(this.component.constants.alertTitle, this.component.constants.errorEdit, 'error' );
+
+        });
+
+      }
+    });
+
+  }
+
 }

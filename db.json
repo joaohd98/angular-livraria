@@ -1,22 +1,10 @@
 {
   "books": [
     {
-      "id": 16,
-      "name": "json-server",
-      "author": "typicode",
-      "price": 1212313
-    },
-    {
-      "id": 17,
-      "name": "json-server",
-      "author": "typicode",
-      "price": 1212313
-    },
-    {
-      "id": 18,
-      "name": "json-server",
-      "author": "typicode",
-      "price": 1212313
+      "name": "meu teste",
+      "author": "autor",
+      "price": 19.99,
+      "id": 18
     },
     {
       "id": 19,
@@ -87,12 +75,6 @@
     {
       "id": 2,
       "name": "meu nome2",
-      "author": "typicode",
-      "price": 1212313
-    },
-    {
-      "id": 3,
-      "name": "meu nome3",
       "author": "typicode",
       "price": 1212313
     },

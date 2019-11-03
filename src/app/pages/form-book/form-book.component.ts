@@ -8,6 +8,7 @@ import {formBookComponentConstants} from './providers/form-book.component.consta
 import {ActivatedRoute, Router} from '@angular/router';
 import {GetBookService} from '../../services/get-book/get-book.service';
 import { Location } from '@angular/common';
+import {EditBookService} from '../../services/edit-book/edit-book.service';
 
 @Component({
   selector: 'app-form-book',
@@ -19,6 +20,8 @@ export class FormBookComponent implements OnInit {
   title: string;
   btnText: string;
 
+  id: string;
+
   interactor: FormBookComponentInteractor;
   formGroup: FormGroup;
   formGroupMessage: FormGroupMessage[];
@@ -28,6 +31,7 @@ export class FormBookComponent implements OnInit {
   constructor(
     public addBookService: AddBookService,
     public getBookService: GetBookService,
+    public editBookService: EditBookService,
     public router: Router,
     public activatedRoute: ActivatedRoute,
     public location: Location) {
@@ -41,14 +45,14 @@ export class FormBookComponent implements OnInit {
 
   ngOnInit() {
 
-    const id = this.activatedRoute.snapshot.params.id;
+    this.id = this.activatedRoute.snapshot.params.id;
 
-    if (id) {
+    if (this.id) {
 
       this.title = this.constants.titleEdit;
       this.btnText = this.constants.btnEdit;
 
-      this.interactor.getBook(id);
+      this.interactor.getBook(this.id);
 
     }
 
@@ -64,7 +68,11 @@ export class FormBookComponent implements OnInit {
 
   submitForm(value: BookResponseModel) {
 
-    this.interactor.addBook(value);
+    if (this.id)
+      this.interactor.editBook(this.id, value);
+
+    else
+      this.interactor.addBook(value);
 
   }
 
