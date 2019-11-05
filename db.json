@@ -59,6 +59,12 @@
       "author": "123123",
       "price": 111.11,
       "id": 36
+    },
+    {
+      "name": "novo",
+      "author": "novo2",
+      "price": 1233.23,
+      "id": 37
     }
   ]
 }
